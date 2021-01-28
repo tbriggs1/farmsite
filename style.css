@@ -1,217 +1,682 @@
-/* Main parent grid on the website */
+#imgText{
+    display: none;
+}
+
+.bluebgg{
+    display:none;
+}
+
 body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+    font-size: 26px;  
+    margin: 0;
+    font-weight: lighter;
+    background:#F7F7F7
 }
 
-.container{
-    background: #f7f7f7;
-}
-
-h1 {
-    font-family: 'Playfair Display';
-    font-weight: 200;
-}
-h2 {
-    font-family: 'Playfair Display';
-    font-weight: 200;
-}
-h3 {
-    font-family: 'Playfair Display';
-    font-weight: 200;
-}
-p {
-    font-family: 'Source Sans Pro';
-}
-/* Main parent grid of the navigation bar */
-.navigationBar{
+#navBar{
     display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template: repeat(1,1fr)/repeat(6,1fr);
 }
 
-/* Main page title */
-.main-title{
-    grid-column-start: 1;
-    grid-column-end: 6;
+
+#title{
+    display: inline;
+    grid-area: 1 / 1 / 1 / 5;
+    margin-right: 170px;
+    width: 350px;
+    font-size: 24px;
     justify-self: center;
-    padding-left: 2%;
-    color: #CB904F;
+    font-family: 'Playfair Display', serif;
+    color: #CC6929;
 }
 
-.navButtons{
-    grid-column-start: 8;
-    grid-column-end: 13;
-    align-self: end;
-    width: 140%;
+#navItems{
+    grid-area: 1/6/1/7;
+    display:inline;
+    margin-top: 38px;
 }
 
-.navAnchor{
+#introText h3 {
+    color: #CC6929;
+    font-family: 'Playfair Display', serif;
+}
+
+#introText p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 34px;
+}
+
+#burgerIcon {
     display: inline-block;
-    padding-right: 2%;
+    cursor: pointer;
 }
 
-/* Parent grid of the image overlay */
-.mainGrid {
-    display: grid;
-    width: 100%;
-    grid-template: repeat(6, 1fr) / repeat(12, 1fr);
-}
-
-/* Cow image */
-.cowImg {
-    grid-area: 1 / 2 / 2 / 12;
-    width: 100%;
-    z-index: 1;
-}
-
-/* Text over the image */
-.textToOverlay {
-    width: 80%;
-    grid-area: 1 / 3 / 2 / 6;
-    z-index: 5;
-    align-self: center;
-    color: white;
-    justify-items: start;
-} 
-/* Blue background positioning */
-.intro{
-    background: #0C2946;
-    grid-area: 2 / 1 / 4 / 13;
-    height: 35%;
-    bottom: 4%;
-    z-index: 0;
-    position: relative;
-    display: grid;
-    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
-}
-
-/* Class to move the text */
-.textIntro {
-    width: 100%;
-    justify-self: center;
-    grid-area: 3 / 3 / 5 / 5;
-    text-align: center;
-    color: #ffffff; 
-}
-
-.textIntro h2 {
-    text-align: center;
-    color: #CB904F;
-}
-
-/* Style for info cards */
-.infoCard {
-    grid-area: 3 / 2 / 4 / 5;
-    position: relative; 
-    background: white;
-    bottom: 50%;
-    height: 33%;
-    width: 80%;
-    text-align: center;
-    padding: 6% 7%;
-    padding-bottom: 12%;
-    justify-self: start;
-}
-
-.infoCard1 {
-    grid-area: 3 / 5 / 4 / 8;
-    position: relative; 
-    background: white;
-    bottom: 50%;
-    height: 33%;
-    width: 80%;
-    text-align: center;
-    padding: 6% 7%;
-    padding-bottom: 12%;
-    justify-self: start;
-    left: 20%;
-}
-
-.infoCard2 {
-    grid-area: 3 / 9 / 4 / 12;
-    position: relative; 
-    background: white;
-    bottom: 50%;
-    height: 33%;
-    width: 80%;
-    text-align: center;
-    padding: 6% 7%;
-    padding-bottom: 12%;
-    justify-self: end;
-}
-.infoCards h3 {
-    color: #CB904F;
-}
-
-/* Class for underline */
-.underline{
-    border-bottom: 3px solid #CB904F;
-    width: 15%;
-    margin-left: 42%;
-    bottom: 4%;
-    position: relative;
-}
-
-/* Set the background of the image */
-.iconBackground {
-    padding: 4%;
-    border-radius: 50%;
-    background: #f7f7f7;
-    height: 40px;
-    width: 40px;
-    margin-left: auto;
-    margin-right: auto;
+#firstBurger, #secondBurger, #thirdBurger{
+    width: 50px;
+    height: 8px;
+    background: #4E4E4E;
+    margin: 6px 0;
+    transition: 0.4;
 }
 
 
-.imgTextContainer{
-    grid-area: 3 / 1 / 5 / 13;
-    grid-template: repeat(2, 1fr) / repeat(12, 1fr);
-    margin-top: 4%;
-    display: grid;
-    width: 100%;
-}
-
-.imgTextContainer button {
+#navMenu{
+    visibility: hidden;
     background: #CC6929;
+    min-width:100%;
+    margin-top:100px;
+    position:absolute;
+    z-index: 1;
+    background: #F7F7F7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navigationItems{
+    margin-left: 110px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2px;
+    color: #CC6929 !important;
+}
+#home, #products ,#prices ,#delivery, #aboutUs{
+    display:block;
+    text-decoration: none;
+    color:black;
+    margin-bottom: 2px;
+}
+
+/* Rotate first bar */
+.changeB1 {
+    -webkit-transform: rotate(-45deg) translate(-12px, 8px) ;
+    transform: rotate(-45deg) translate(-12px, 10px);
+    width: 35px;
+    height: 8px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.4;
+  }
+  
+/* Fade out the second bar */
+.changeB2{
+opacity: 0;
+}
+  
+/* Rotate last bar */
+.changeB3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+    width: 35px;
+    height: 8px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.4;
+}
+
+
+#main{
+    display:grid;
+    grid-template: repeat(1,1fr) / repeat(6,1fr);
+    
+}
+
+.cowImg{
+    grid-area: 1 / 1 / 1 / 7;
+    overflow: hidden;
+    background: #0C2946;
+}
+
+#cowImg{
+    display: 100%;
+}
+
+#introduction{
+    grid-area: 1 / 1 / 2 / 7;
+    background: #0C2946;
+    display: grid;
+    grid-template: repeat(4,1fr) / repeat(6,1fr);
+    row-gap: 100px;
+    margin-top: 760px;
+    padding-bottom: 60px;
+}
+
+#introText{
+    text-align: center;
     color: white;
-    border: none;
+    grid-area: 1 / 1 / 1 / 7;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.infoCard{
+    background: white;
+    width: 85%;
+    height: 100%;
+}
+
+.infoCard h3{
+    color: #CC6929;
+    font-family: 'Playfair Display', serif;
+}
+
+.infoCard p{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.infoCard img{
+    color: #CC6929;
+    margin-top: 2%;
+}
+
+.cardImgBg{
+    background: #F7F7F7;
+    border-radius: 50%;
+    height:100px;
+    width: 100px;
+    margin-left: 42%;
     padding: 2%;
 }
-
-.imgTextContainer h2 {
-    color: #CB904F;
+.underLine{
+    border-bottom: 3px solid #CC6929;;
+    width: 3em;
+    margin-left: 45%;
+    margin-right: 10%;
 }
 
-.textImgSide {
-    grid-area:  1 / 2 / 1 / 5;
-    position: relative; 
-    justify-self: start;
+
+.infoCard p{
+    font-size: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
-.textButton { 
-    grid-area: 1 / 7 / 1 / 10;
-    align-self: start;
-    position: relative;
-    margin-top: 6%;
+#milk{
+    grid-area: 2 / 1 / 2 / 7;
+    justify-self: center;
+    text-align: center;
+    padding: 2%;
+    padding-top: 4%;
+    margin-top: -60px;
 }
 
-.textImgSide2 {
-    grid-area: 2 / 7 / 2 / 10;
-    position: relative; 
-    display: inline;
-    margin-top: 6%;
-    bottom: 40%;
+#honey{
+    grid-area: 3 / 1 / 3 / 7;
+    justify-self: center;
+    text-align: center;
+    padding: 2%;
+    margin-top: -60px;
+    padding-top: 4%;
 }
 
-.textButton2 { 
-    grid-area:  2 / 2 / 2 / 5;
-    align-self: start;
-    position: relative;
-    display: inline;
-    bottom: 40%;
+#egg{
+    grid-area: 4 / 1 / 4 / 7;
+    justify-self: center;
+    text-align: center;
+    padding: 2%;
+    margin-top: -60px;
+    padding-top: 4%;
+}
+
+#moreInfo1{
+    grid-area: 2 / 1 / 2 / 7;
+    margin-top: 50px;
+    justify-self: center;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+#moreInfo2{
+    grid-area: 2 / 1 / 7 / 7;
+    margin-top: 60px;
+    justify-self: center;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+#infoSection h2{
+    color: #CC6929;
+    font-family: 'Playfair Display', serif;
+}
+
+#infoSection button{
+    color: white;
+    background: #CC6929;
+    border: none;
+    shadow: none;
+    cursor: pointer;
+    padding: 2%;
+    height: 70px;
+    width: 180px;
+    font-size: 20px;
+}
+
+
+#infoSection p{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.reviewImg{
+    display:none;
+}
+#review{
+    text-align: center;
+    margin-top: 120px;
+    margin-left: 12%;
+    margin-right: 6%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#review h2{
+    color: #CC6929;
+}
+
+.nameReview{
+    color: #CC6929;
+}
+
+.footerC{
+    font-size: 20px;
+    margin-top: 120px;
+    background: #0C2946;
+    color: white;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+#socialIcons{
+    display:inline;
+    margin-right: 5px;
+}
+
+#footerTitle{
+    color: #CC6929;
+}
+
+@media (min-width:1100px){
+    body{
+       
+        
+    }
+    #navBar{
+        display: grid;
+        grid-template: repeat(1,1fr)/repeat(6,1fr);
+        max-width: 1100px;
+        min-width: 1100px;
+        width: 1100px;
+        margin: 0 auto;
+    }
+    
+
+    #main{
+        max-width: 1100px;
+        width: 1100px;
+        min-width: 1100px;
+        margin: 0 auto;
+        display:grid;
+        grid-template: repeat(1,2900px) / repeat(6,1fr);
+    }
+    
+    #title{
+        display: inline;
+        grid-area: 1 / 1 / 1 / 5;
+        width: 350px;
+        font-size: 16px;
+        justify-self: start;
+        font-family: 'Playfair Display', serif;
+        color: #CC6929;    }
+    
+    #burgerIcon{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #navMenu{
+        visibility: visible;
+        margin-top:20px;
+        z-index: 1;
+        background: none;
+        padding-top: 0px;
+        position: relative;
+        padding-bottom: 0px;
+        width: 400px;
+        text-align: end;
+        margin-right: 650px;
+    }
+    #home, #products ,#prices ,#delivery, #aboutUs{
+        display:inline;
+        background: none;
+        text-decoration: none;
+        color: #707070 !important;
+        margin: 0px ;
+        font-size: 16px;
+        margin-right:2px;
+    }
+
+    .cowImg{
+        grid-area: 1 / 1 / 1 / 7;
+        overflow: hidden;
+        background: transparent;
+        z-index: 0;
+    }
+
+    #imgText{
+        color: white;
+        grid-area: 1 / 1 / 1 / 5;
+        z-index: 5;
+        width: 50%;
+        font-family: 'Source Sans Pro', 'sans-serif';
+        font-size: 18px;
+        margin-left: 70px;
+        margin-top: 17%;
+        display: unset;
+    }
+
+    #imgText{
+        font-family: 'Playfair Display', 'serif';
+    }
+
+    .bluebgg{
+        height: 600px;
+        margin-top: 500px;
+        z-index: -40;
+        position: absolute;
+        width: 100%;
+        background:#0C2946;
+        display: unset;
+    }
+    
+    #introduction{
+        grid-area: 1 / 1 / 1 / 7;
+        background: none;
+        display: grid;
+        grid-template: repeat(1,1fr) / repeat(6,1fr);
+        row-gap: 100px;
+        margin-top: 650px;
+        padding-bottom: 60px;
+        z-index: 5;
+    }
+    
+    #introText{
+        text-align: center;
+        color: white;
+        grid-area: 1 / 2 / 2 / 6;
+        margin-left: 4%;
+        margin-right: 4%;
+        height: 1100px;
+        font-size: 18px;
+    }
+    
+    #introText p {
+        font-size: 18px;
+    }
+
+    .infoCard{
+        background: white;
+        width: 85%;
+        height: 100%;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .infoCard h3{
+        color: #CC6929;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .infoCard p{
+        font-family: 'Source Sans Pro', sans-serif;
+
+    }
+    
+    .infoCard img{
+        color: #CC6929;
+        margin-top: 2%;
+        
+    }
+    
+    .cardImgBg{
+        background: #F7F7F7;
+        border-radius: 50%;
+        height:60px;
+        width: 60px;
+        margin-left: 40%;
+        padding: 2%;
+    }
+    .underLine{
+        border-bottom: 3px solid #CC6929;;
+        width: 3em;
+        margin-left: 43%;
+        margin-right: 10%;
+    }
+    
+    
+    .infoCard p{
+        font-size: 16px;
+        padding-right: 0px;
+        padding-left: 20%;
+        width: 60%;
+    }
+    
+    #milk, #honey, #egg{
+        grid-area: 1 / 1 / 1 / 3;
+        justify-self: start;
+        text-align: center;
+        padding-top: 10%;
+        margin-top: 290px;
+        font-size: 18px;
+        height: 250px;
+        width: 300px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #honey{
+        grid-area: 1 / 3 / 1 / 5;
+    }
+    
+    #egg{
+        grid-area: 1 / 5/ 1 / 7;
+    }
+    
+    #milk p, #honey p, #egg p {
+        font-size: 14px;
+    }
+
+    #milk h3, #honey h3, #egg h3{
+        font-size: 16px;
+    }
+    
+    #infoSection{
+        grid-area: 1 / 1 / 2 / 7;
+        margin-top: 1300px;
+        grid-template: repeat(4,1fr) / repeat(6,1fr);
+        display: grid;
+    }
+
+        
+    #infoSection h2{
+        color: #CC6929;
+        font-family: 'Playfair Display', serif;
+    }
+    .infoImg{
+        grid-area: 1 / 1 / 1 / 4;
+        display: inline;
+    }
+
+    .infoText{
+        grid-area: 1 / 4 / 1 / 7;
+        justify-self: center;
+        height: 150px;
+        margin-top: 13%;
+        font-size: 16px;
+        display: inline;
+    }
+
+    .infoButton{
+        grid-area: 1 / 4 / 1 / 7;
+        display:inline;
+        position:relative;
+        top: 230px;
+        cursor: pointer;
+    }
+    
+    #infoSection button{
+        color: white;
+        background: #CC6929;
+        border: none;
+        shadow: none;
+        cursor: pointer;
+        display:inline;
+        padding: 1%;
+        height: 35px;
+        width: 90px;
+        font-size: 10px;
+    }
+    
+    #infoSection p{
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    #moreInfo1{
+        grid-area: 1 / 1 / 1 / 7;
+        margin-top: 50px;
+        justify-self: start;
+        margin-left:0px;
+        margin-right: 0px;
+        display: grid;
+        grid-template: repeat(4,1fr) / repeat(6,1fr);
+    } 
+
+    #moreInfo2 .infoText {
+        grid-area:  1 / 1 / 1 / 4;
+        width: 500px;
+        margin-right: 50px;
+    }
+
+    #moreInfo2 .infoImg{
+        grid-area: 1 / 4 / 1 / 7;
+    }
+
+    #moreInfo2 .infoButton{
+        grid-area: 1 / 1 / 1 / 4;
+        margin-top: 10px;
+    }
+
+    #moreInfo2{
+        grid-area: 1 / 1 / 1 / 7;
+        margin-top: 500px;
+        justify-self: start;
+        margin-left:0px;
+        margin-right: 0px;
+        display: grid;
+        position: relative;
+        grid-template: repeat(4,1fr) / repeat(6,1fr);
+    }
+
+    
+    #review{
+        grid-area: 1 / 1 / 1 / 7;
+        text-align:start;
+        margin-top: 950px;
+        margin-left: 0%;
+        margin-right: 6%;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        display: grid;
+        background: white;
+        padding-top: 120px;
+        height: 450px;
+    }
+
+    .reviewText{
+        grid-area: 1 / 2 / 1 / 5;
+        width: 500px;
+    }
+    
+    .reviewImg{
+        grid-area: 1 / 4 / 1 / 6;
+        display: unset;
+    }
+
+    .infoImg img{
+        height:320px; 
+        width:470px;
+    }
+
+    #review h2{
+        color: #CC6929;
+    }
+    
+    .nameReview{
+        color: #CC6929;
+    }
+    
+
+
+    .footerC{
+        font-size: 20px;
+        margin-top: 120px;
+        background: #0C2946;
+        color: white;
+        text-align: unset;
+        padding-bottom: 30px;
+        padding-top: 10px;
+        font-family: 'Playfair Display', serif;
+        display: grid;
+        grid-template: repeat(1, 1fr) / repeat(1, 6fr);
+    }
+    
+    #socialIcons{
+        display:inline;
+        margin-right: 5px;
+    }
+    
+    .ftitle {
+        font-size: 16px;
+        margin-top: 50px;
+        margin-left: 40px;
+        color: #CC6929;
+        grid-area: 1 / 1 / 1 / 4;
+    }
+
+   
+
+    .footerTitle h2{
+        font-size: 16px;
+        color: #CC6929;
+    }
+    .footerNav{
+        grid-area: 1 / 3 / 1 / 7;
+        width: 500px;
+        display:inline;
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .footerNav h3{
+        padding-right: 40px;
+        display:inline;
+        font-size: 16px;
+    }
+
+    .copyright{
+        margin-top: 120px;
+        margin-left: 40px;
+        grid-area: 1 / 1 / 1 / 4;
+        font-size: 14px;
+    }
+
+    .social{
+        grid-area: 1 / 4 / 1 / 7;
+        margin-top: 90px;
+        margin-right: 200px;
+        font-size: 16px;
+    }
+
+    #socialIcons{
+        margin-left: 40px;
+    }
 }

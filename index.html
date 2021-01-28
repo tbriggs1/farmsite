@@ -1,83 +1,137 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Red Lodge Farm</title>
-        <link rel="stylesheet" href="style.css">
+        <link href="style.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- Navigation Bar -->
-        <nav class="navigationBar">
-            <!-- Class for main title -->
-            <div class="main-title">
-                <h1>Red Lodge Farm</h1>
+        <nav role="navigation" id='navBar'>
+            <div id="title">
+                <h1 id='RedLodgeTitle'>Red Lodge Farm</h1>
             </div>
-            <!-- Class for navigation buttons -->
-            <div class="navButtons">
-                <a class="navAnchor"><h1>Home</h1></a>
-                <a class="navAnchor"><h1>Products</h1></a>
-                <a class="navAnchor"><h1>Prices</h1></a>
-                <a class="navAnchor"><h1>Delivery</h1></a>
-                <a class="navAnchor"><h1>Abous us</h1></a>
+            <div id='navItems' class='navItems'>
+                <div id='burgerIcon'>
+                    <div id="firstBurger"  class="burgerButtons"></div>
+                    <div id="secondBurger" class="burgerButtons"></div>
+                    <div id="thirdBurger"  class="burgerButtons"></div>
+                </div>
+            </div>
+            <div id='navMenu'>
+                <a href='#' class='navigationItems' id='home'>Home</a>
+                <a href='#' class='navigationItems' id='products'>Products</a>
+                <a href='#' class='navigationItems' id="prices">Prices</a>
+                <a href='#' class='navigationItems' id='delivery'>Delivery</a>
+                <a href='#' class='navigationItems' id='aboutUs'>About Us</a>
             </div>
         </nav>
-        <main class="container">
-            <!-- Image with text over grid -->
-            <div class="mainGrid">
-                <img src="coww.jpg" class="cowImg"/>
-                <div class="textToOverlay">
-                    <h1>Your finest local Yorkshire produce</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam obcaecati quas veniam amet at quia tempora fuga dicta quae similique vel quaerat beatae, voluptatibus rerum eum. Fuga qui nam blanditiis.</p>
+        <div class="bluebgg"></div>
+        <main id='main'>
+            <div class='cowImg'>
+                <div id='cowImg'>
+                    <img src="coww.jpg">
                 </div>
-                <!-- Introduction with three cards -->
-                <div class="intro">
-                    <div class="textIntro">
-                        <h2>Introduction</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, reprehenderit id suscipit vitae minima quisquam neque sequi tenetur facilis dignissimos totam, numquam repellat maxime esse amet officiis perspiciatis natus modi.</p>
-                    </div>
+            </div>
+           <div id='imgText'>
+            <h2>Your finest Local <br>Yorkshire Produce</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, recusandae reprehenderit ea assumenda perspiciatis nostrum harum officia ut possimus. Necessitatibus, expedita. Eos aperiam perspiciatis fugit amet, doloremque itaque vitae quaerat.</p>
+            </div>
+            <div id='introduction'>
+                <div id='introText'>
+                    <h3>Introduction</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptate incidunt maxime dicta, veniam placeat consectetur necessitatibus. Unde numquam earum, fugiat itaque optio nisi impedit consequuntur ipsa cum esse eum!</p>
                 </div>
-                <div class="infoCard">
-                    <div class="iconBackground">
-                        <img src="Milk_Outline.svg" class="milkImg" height="40px" width="40px">
+                <div class='infoCard' id='milk'>
+                    <div class="cardImgBg">
+                        <img src="Milk_Outline.svg" height=60px width=60px id='milkImg' class='infoCardImg'>
                     </div>
-                    <h3>Raw milk</h3>
-                    <div class="underline"></div>
+                    <h3>Raw Milk</h3>
+                    <div class='underLine'></div>
                     <p>Some short and snappy copy here explaining the amazing milk which the farm sells on a daily basis.</p>
                 </div>
-                <div class="infoCard1">
-                    <div class="iconBackground">
-                        <img src="Egg_Outline.svg" class="milkImg" height="40px" width="40px">
+                <div class='infoCard' id='honey'>
+                    <div class="cardImgBg">
+                        <img src="Honey_Outline.svg" height=60px width=60px id='honeyImg' class='infoCardImg'>
                     </div>
-                    <h3>Free range eggs</h3>
-                    <div class="underline"></div>
-                    <p>Some short and snappy copy here explaining the amazing eggs which the farm sells on a daily basis.</p>
+                    <h3>Raw Honey</h3>
+                    <div class='underLine'></div>
+                    <p>Some short and snappy copy here explaining the amazing milk which the farm sells on a daily basis.</p>
                 </div>
-                <div class="infoCard2">
-                    <div class="iconBackground">
-                        <img src="Honey_Outline.svg" class="milkImg" height="40px" width="40px">
+                <div class='infoCard' id='egg'>
+                    <div class="cardImgBg">
+                        <img src="Egg_Outline.svg" height=60px width=60px id='eggImg' class='infoCardImg'>
                     </div>
-                    <h3>Raw honey</h3>
-                    <div class="underline"></div>
-                    <p>Some short and snappy copy here explaining the amazing milk which the farm sells on a daily basis.</p>    
+                    <h3>Raw Egg</h3>
+                    <div class='underLine'></div>
+                    <p>Some short and snappy copy here explaining the amazing milk which the farm sells on a daily basis.</p>
                 </div>
-                <div class="imgTextContainer">
-                    <img src="farm.jpg" class="textImgSide">
-                    <div class="textButton">
-                        <h2>H2 Title would sit here</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae maiores similique vitae eius animi praesentium optio tempora amet quos minima maxime atque consequatur, ab dicta, nulla at, cumque debitis exercitationem!</p>
+            </div>
+            <div id='infoSection'> 
+                <div id='moreInfo1'>
+                    <div class='infoImg'>
+                        <img src="farm.jpg" height=600px width=880px>
+                    </div>
+                    <div class='infoText'>
+                        <h2>H2 title would sit here</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem praesentium suscipit quisquam odit libero doloribus impedit placeat, dolorum, tempora et cumque autem? Ut deserunt est, aperiam iusto ea amet accusantium?</p>
+                    </div>
+                    <div class='infoButton'>
                         <button>Find out more</button>
                     </div>
-                    <div class="textButton2">
-                        <h2>H2 Title would sit here</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae maiores similique vitae eius animi praesentium optio tempora amet quos minima maxime atque consequatur, ab dicta, nulla at, cumque debitis exercitationem!</p>
+                </div>
+                <div id='moreInfo2'>
+                    <div class='infoImg'>
+                        <img src="Chicken.jpg" height=600px width=880px>
+                    </div>
+                    <div class='infoText'>
+                        <h2>H2 title would sit here</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem praesentium suscipit quisquam odit libero doloribus impedit placeat, dolorum, tempora et cumque autem? Ut deserunt est, aperiam iusto ea amet accusantium?</p>
+                    </div>
+                    <div class='infoButton'>
                         <button>Find out more</button>
                     </div>
-                    <img src="Chicken.jpg" class="textImgSide2">
+                </div>
+                <div id="review">
+                    <img class='reviewImg' src="Wanker.jpg">
+                    <div class="reviewText">
+                        <h2>❝</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id aut accusamus vitae incidunt temporibus commodi soluta officia. Deleniti quae a saepe expedita impedit facere. Dicta assumenda dolores fuga vero adipisci.</p>
+                        <p class='nameReview'>Thomas Briggs</p>
+                        <p class='customerReview'>Satified Customer</p>
+                    </div>
                 </div>
             </div>
         </main>
+        <footer>
+            <div class="footerC">
+                <div class="ftitle">
+                    <h3 id="footerTitle">Red Lodge Farm</h3>
+                </div>
+                <div class='footerNav'>
+                    <h3>Home</h3>
+                    <h3>Products</h3>
+                    <h3>Delivery</h3>
+                    <h3>About Us</h3>
+                </div>
+                <div class="social">
+                <h4>Find us on social media</h4>
+                    <div id="socialIcons">
+                        <img src="Twitter.svg">
+                        <img src="Insta.svg">
+                        <img src="Facebook.svg">
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h4>© 2020 Red Lodge Farm. All rights reserved</h4>
+                </div>  
+            </div>
+
+        </footer>
+    <script src="script.js"></script>
+    <script src="jquery-3.5.1.js"></script>
     </body>
 </html>
